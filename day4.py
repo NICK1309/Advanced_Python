@@ -31,7 +31,7 @@ for i in matcher:
  count += 1
  print(i.start(),"...",i.end(),"...",i.group())
  print("The number of occurances:  ",count)
- 
+ '''
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # find out data in text file and change it accordingly ...
 # Task - 01
@@ -44,7 +44,7 @@ match = pattern.finditer(data)
 for i in match:
     count += 1
 print(count)
-'''
+
 #------------------------------------------------------------------------------------------------------------------------------------------
 '''
 import re
@@ -54,8 +54,9 @@ for i in matcher:
     count +=1
     print(i.start(),"...",i.end(),"...",i.group())
 print("The number of occurances :",count)
-
-#-------------------------------------------------------------------------------------------------------------------------------------------
+'''
+#-------------------------------------------------------------------------------------------------------------------------------------------------------
+'''
 import re
 obj = input("Enter any character.")
 matchobj = re.finditer(obj,"a7sd sd878 sdfsd")
@@ -64,13 +65,15 @@ for match in matchobj:
     print(match.start(),"...",match.end(),"...",match.group())
 #print("The number of occurances :",count)
 '''
-#-------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------------------
+'''
 import re
 a = input("Enter any string to perform operations.")
-ntch = re.match(a,"python is very imp")
+ntch = re.match(a,"The Humans are more powerful than robots ")
 print(ntch)
 if ntch != None:
     print("match is found at begining level.")
     print(ntch.start(), " ",ntch.end())
 else:
     print("There is no matching at begining level") 
+    '''

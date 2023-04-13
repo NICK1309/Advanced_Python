@@ -32,17 +32,20 @@ if obj != None:
     print("Valid Mobile number")
 else:
     print("Invalid Mobile number")   
-    
+  '''  
 #---------------------------------------------------------------------------------------------------------------
- Task 01 :- #WAP to accept pw of pw contains uppercase lowercase digit special symbols then print pw is weak or strong.
+ #Task 01 :- #WAP to accept pw of pw contains uppercase lowercase digit special symbols then print pw is weak or strong.
 import re
 pw = input("Enter a Password.")
-obj = re.search("[A-Za-z0-9\W]",pw)
-if obj != None:
+obj = re.search("[A-Z]",pw)
+obj2 = re.search("[a-z]",pw)
+obj3 = re.search("[0-9]", pw)
+obj4 = re.search("W/",pw)
+if obj != None and obj2 != None and obj3 != None and obj4 != None :
     print("Password is strong.")
 else:
     print("Password is weak.")  
-'''
+
 #--------------------------------------------------------------------------------------------------------------- 
 '''import re
 obj = re.sub("[0-9]","#","asda78asda8ad")
