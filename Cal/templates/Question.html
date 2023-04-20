@@ -1,0 +1,123 @@
+ <!---<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Programming Language Questions list</h2>
+
+<ul>
+  {% for i in objQuestion %}
+  <li> {{i.question_text}}</li>
+  <li>{{i.pub_date}} </li>
+  {% endfor %}
+</ul>  
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Questions</th>
+    <th>Date</th>
+  </tr>
+
+  <tr>
+    {% for i in objQuestion %}
+    <td>{{i.question_text}}</td><br><br>
+    <td>{{i.pub_date}}</td>
+    {% endfor %}
+  </tr>
+  
+  <tr>
+    
+   
+  </tr>
+  <tr>
+    
+    
+    
+  </tr>
+  
+  
+</table>
+
+</body>
+</html>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>RestaurentAdmin</h2>
+
+<form action="persondata" method='POST'>
+    {% csrf_token %}
+  <label for="fname">Main Stream FoodName:</label><br>
+  <input type="text" id="fname" name="mainStreamFoodName"><br><br>
+  <label for="lname">SubCategory Food Charge:</label><br>
+  <input type="text" id="lname" name="subCategoryFoodCharge" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+{{msg}}
+<head>
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  </style>
+  </head>
+<h2>MainCategoryFood</h2>
+
+<table>
+  <tr>
+    <th>MainStream Food Name</th>
+    <th>Sub Category Food Charge</th>
+    
+  </tr>
+  {% for i in obj %}
+  <tr>
+    
+    <td>{{i.mainStreamFoodName}}</td>
+    <td>{{i.subCategoryFoodCharge}}</td>
+    
+    
+  </tr>
+  {% endfor %}
+  
+</table>
+
+</body>
+</html>
+
+
