@@ -66,9 +66,7 @@ tr:nth-child(even) {
 <!DOCTYPE html>
 <html>
 <body>
-
 <h2>RestaurentAdmin</h2>
-
 <form action="persondata" method='POST'>
     {% csrf_token %}
   <label for="fname">Main Stream FoodName:</label><br>
@@ -109,12 +107,148 @@ tr:nth-child(even) {
   <tr>
     
     <td>{{i.mainStreamFoodName}}</td>
-    <td>{{i.subCategoryFoodCharge}}</td>
-    
-    
+    <td>{{i.subCategoryFoodCharge}}</td> 
   </tr>
   {% endfor %}
   
+</table>
+<!----------------------------------->
+
+<form action="person_data" method='POST'>
+    {% csrf_token %}
+  <label for="fname">Table Name:</label><br>
+  <input type="text" id="fname" name="tName"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+{{msg}}
+<head>
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  </style>
+  </head>
+<h2>Tables</h2>
+<table>
+  <tr> <br><br>
+    <th>Table Name</th> 
+  </tr>
+  {% for x in obj1 %}
+  <tr>
+    
+    <td>{{x.tName}}</td>
+      
+  </tr>
+  {% endfor %}
+  
+</table>
+<!---------------------------------------------->
+
+<form action="person_data1" method='POST'>
+  {% csrf_token %}
+<label for="fname">Waiter Name:</label><br>
+<input type="text" id="fname" name="waiterName"><br><br>
+<input type="submit" value="Submit">
+</form> 
+{{msg}}
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<h2>Waiters</h2>
+<table>
+<tr> <br><br>
+  <th>Waiter Name</th> 
+</tr>
+{% for z in obj2 %}
+<tr>
+  
+  <td>{{z.waiterName}}</td>
+    
+</tr>
+{% endfor %}
+
+</table>
+<!------------------------------------------------------->
+<form action="person_data2" method='POST'>
+  {% csrf_token %}
+<label for="fname">Food Name:</label><br>
+<input type="text" id="fname" name="foodName"><br><br>
+<label for="lname">Food Prize:</label><br>
+<input type="text" id="lname" name="foodPrize" ><br><br>
+<label for="lname">Name of Table:</label><br>
+<input type="text" id="lname" name="nameOfTable" ><br><br>
+<label for="lname">Name of Waiter:</label><br>
+<input type="text" id="lname" name="nameOfWaiter" ><br><br>
+<input type="submit" value="Submit">
+</form> 
+{{msg}}
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<h2>Book Orders</h2>
+
+<table>
+<tr>
+  <th>Food Name</th>
+  <th>Food Prize</th>
+  <th>Name Of Table</th>
+  <th>Name Of Waiter</th>
+  
+</tr>
+{% for j in obj3 %}
+<tr>
+  
+  <td>{{j.foodName}}</td>
+  <td>{{j.foodPrize}}</td> 
+  <td>{{j.nameOfTable}}</td>
+  <td>{{j.nameOfWaiter}}</td>
+</tr>
+{% endfor %}
+
 </table>
 
 </body>

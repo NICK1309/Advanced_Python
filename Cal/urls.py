@@ -21,4 +21,8 @@ urlpatterns = [
    path("",views.assesment),
    path("",views.person),
    path("persondata",views.savePersonData),
+   #----------------------------------------
+    path("person_data",views.savePerson_Data),
+    path("person_data1",views.savePerson_Data1),
+    path("person_data2",views.savePerson_Data2),
 ]
