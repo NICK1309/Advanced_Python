@@ -1,0 +1,89 @@
+Person
+
+personName
+personMobileNo
+personAddress
+
+--------------------
+urls.py
+
+from django.contrib import admin
+from django.urls import path,include
+from .import views
+urlpatterns = [
+   #path("",views.assesment),
+   path("",views.person),
+]
+---------------------
+views.py
+
+from django.shortcuts import render
+from .models import Question
+# Create your views here.
+# def index(request):
+#     return render(request,"index.html")
+def assesment(request):
+    objQuestion = Question.objects.all()
+    return render(request,"Question.html",{'objQuestion':objQuestion})
+
+def person(request):
+    return render(request, "person.html")
+----------------------
+person.html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+  <label for="fname">Person Name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Person Mobile No:</label><br>
+  <input type="text" id="lname" name="lname" ><br><br>
+  <label for="name">Person Address:</label><br>
+  <input type="text" id="name" name="name" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
+
+--------------------
+models.py
+
+from django.db import models
+
+#Create your models here.
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField("date published")
+
+# class Teacher(models.Model):
+#     teacherName = models.CharField(max_length=200)
+#     teacherSubject = models.CharField(max_length=200)
+#     teacherCollegeName = models.CharField(max_length=200)    
+    def __str__(self):
+        return self.question_text
+class Person(models.Model):
+    personName = models.CharField(max_length=100)
+    personMobileNo = models.IntegerField()
+    personAddress = models.TextField()
+
+    def __str__(self):
+        return self.personName
+-------------------------------
+
+<form action="persondata" method='POST'>
+    {% csrf_token %}
+  <label for="fname">Person Name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Person Mobile No:</label><br>
+  <input type="text" id="lname" name="lname" ><br>
+  <label for="name">Person Address:</label><br>
+  <input type="text" id="name" name="name" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+#name is the attribute which is used to be get submitted.
