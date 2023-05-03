@@ -227,7 +227,7 @@ obj = BE_fy()
 obj.display()
 objsem = obj.objsem
 objsem.show()
-'''
+
 class Animal:
     legs = 4
     leg2 = 2
@@ -239,3 +239,121 @@ class Animal:
         print('{} walks with {} legs...'.format(name,cls.leg2))    
 Animal.walk("Dog")
 Animal.wal("Man")        
+'''
+#----------------------------------------------------------
+'''
+#Day - 04
+#Program No.01
+# Single level inheritance
+class College: #parent class
+    def college_name(self): #member function of college
+        print("SVKM IOT Dhule")
+class Student(College): #child class
+    def student_info(self): #member function
+        print("Name : Nikita Sali") 
+        print("Branch : Computer")
+obj = Student() # object always created of child class
+obj.college_name()
+obj.student_info()                
+
+#Multiple inheritance
+class College: #parent class
+    def college_name(self): #member function of college
+        print("SVKM IOT Dhule")
+class Student(College): #child class
+    def student_info(self): #member function
+        print("Name : Nikita Sali") 
+        print("Branch : Computer")
+class Exam(Student): #child class
+    def subject(self):
+        print("Subject1: Data Structures")
+        print("Subject2: Mathematics")
+        print("Subject3: Python language ")
+obj = Exam() # object always created of child class
+obj.college_name()
+obj.student_info() 
+obj.subject() 
+
+# Multiple inheritance
+class SubMarks:
+    math = int(input("Enter the paper marks of math:"))
+    DE = int(input("Enter the paper marks of DE:"))
+    c = int(input("Enter the paper marks of c:"))
+    english = int(input("Enter the paper marks of english:"))
+class PracMarks:
+    cpract = int(input("Enter the Practical marks of c language."))
+class Result(SubMarks,PracMarks):
+   
+    def total(self):
+        if self.math>=40 and self.DE>=40 and self.c>=40 and self.english>=40 and self.cpract>=40 :
+            print("You are Passed")
+        else:
+            print("You are failed")
+obj = Result()   
+obj.total()
+#--------------------------------------
+
+
+class CollegeDetails:
+    def college_name(self):
+        print("SVKM IOT Dhule")
+        print("Institute code: 5749")
+class StudentDetails(CollegeDetails):
+    def student_info(self):
+        print("Name : Priyank Sharma") 
+        print("Branch : Computer")
+        print("Roll : 34")
+class SubjectDetails(CollegeDetails):
+    def subject(self):
+        print("Subject1: DSA")
+        print("Subject2: DM")
+        print("Subject3: DBS ")
+class ExamDetails(CollegeDetails): 
+    def subject(self):
+        DSA = int(input("Enter the paper marks of DSA:"))
+        DM = int(input("Enter the paper marks of DM:"))
+        DBS = int(input("Enter the paper marks of DBA:"))
+class ResultDetails(ExamDetails): #child class
+    def total(self):
+        if self.DSA >= 40 and self.DM >= 40 and self.DBS >= 40:
+            print("You are PASSED")
+        else:
+            print("You are FAILED")
+obj = ResultDetails()
+obj.total()
+
+#Task No.01
+class CollegeDetails:
+    def college_name(self):
+        print("SVKM IOT Dhule")
+        print("Institute code: 5749")
+class StudentDetails(CollegeDetails):
+    def student_info(self):
+        print("Name : Priyank Sharma") 
+        print("Branch : Computer")
+        print("Roll : 34")
+class SubjectDetails(StudentDetails):
+    def subject(self):
+        print("Subject1: DSA")
+        print("Subject2: DM")
+        print("Subject3: DBS ")
+class SubMarks(SubjectDetails):
+    DSA = int(input("Enter the paper marks of DSA:"))
+    DM = int(input("Enter the paper marks of DM:"))
+    DBS = int(input("Enter the paper marks of DBS:"))
+class Result(SubMarks):
+    def total(self):
+        if self.DSA>=40 and self.DM>=40 and self.DBS>=40 :
+            print("You are Passed")
+        else:
+            print("You are failed")
+obj = Result()             
+obj.college_name()
+obj.student_info()
+obj.subject()
+obj = StudentDetails()
+obj = SubjectDetails()
+obj = SubMarks()            
+obj = Result()   
+obj.total()
+'''
